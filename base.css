@@ -1,0 +1,35 @@
+/* --- 01 color --- */
+/*
+black: #333
+grey--light: #eee
+
+primary-color: #ccddee
+primary-color--dark: #8899aa
+primary-color--light: #ddeeff
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: #333;
+  font-size: 1.6rem;
+  font-family: 'Lato';
+  font-weight: 400;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
