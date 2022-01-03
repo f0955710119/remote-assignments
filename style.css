@@ -50,6 +50,10 @@
   font-weight: 900;
 }
 
+/* --- ----------------- --- */
+/* --- Section: products --- */
+/* --- ----------------- --- */
+
 .products {
   max-width: 120rem;
   margin: 0 auto;
@@ -60,7 +64,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .product__item {
