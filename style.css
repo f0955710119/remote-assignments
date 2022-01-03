@@ -14,7 +14,7 @@
   background-color: #eee;
   height: 6rem;
 
-  padding: 0 6rem 0 3rem;
+  padding: 0 3rem;
 }
 
 .logo {
@@ -30,7 +30,7 @@
 }
 
 .nav__item:not(:last-child) {
-  margin-right: 6rem;
+  margin-right: 4rem;
 }
 
 .nav__link {
