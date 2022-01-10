@@ -7,6 +7,7 @@ function calculate({ ...args }) {
   } else {
     result = 'Not supported';
   }
+  console.log(`The result of this operation is ${result}.`);
   return result;
 }
 
@@ -19,6 +20,7 @@ function calculateAnother(args = { op, n1, n2 }) {
   } else {
     result = 'Not supported';
   }
+  console.log(`The result of this operation is ${result}.`);
   return result;
 }
 
