@@ -15,6 +15,8 @@
   height: 6rem;
 
   padding: 0 3rem;
+
+  position: relative;
 }
 
 .logo {
@@ -64,7 +66,10 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-  margin-bottom: 2rem;
+}
+
+.product__container--sub {
+  display: none;
 }
 
 .product__item {
@@ -73,6 +78,7 @@
 }
 
 .btn-cta {
+  margin: 2rem 0;
   padding: 2rem 1.2rem;
   background-color: #ddeeff;
 }
