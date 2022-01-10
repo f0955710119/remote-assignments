@@ -2,7 +2,7 @@
   Success (be careful to the statement of for lop) 
   https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Guide/Loops_and_iteration#for...in_%E9%99%B3%E8%BF%B0%E5%BC%8F
 */
-exports.module = function max(numbers) {
+module.exports = function max(numbers) {
   let max = 0;
 
   for (const number of numbers) {
