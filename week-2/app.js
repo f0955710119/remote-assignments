@@ -18,6 +18,18 @@ iconMenuClose.addEventListener('click', () =>
   nav.classList.remove('open-menu')
 );
 
+const buttonCTA = document.querySelector('.btn-cta');
+const productContainerSub = document.querySelector('.product__container--sub');
+let ctaClicked = false;
+buttonCTA.addEventListener('click', () => {
+  if (ctaClicked) {
+    ctaClicked = !ctaClicked;
+    productContainerSub.style.display = 'none';
+    return;
+  }
+  ctaClicked = !ctaClicked;
+  productContainerSub.style.display = 'grid';
+});
 /*
 -----------SECTION tesing -----------
 */
