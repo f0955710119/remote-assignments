@@ -29,11 +29,9 @@ function twoSum(numbers, targetNumber) {
   }
   result.length === 0 &&
     result.push({ message: 'There is no match.', pair: 0 });
+  console.log(result);
   return result;
 }
-
-const result = twoSum([1, 2, 3, 4, 1, 4], 11);
-console.log(result);
 
 // 失敗版本:
 /*
@@ -61,3 +59,5 @@ console.log(result);
 //   return result;
 // }
 // console.log(twoSumTest([1, 2, 3, 4, 1, 4], 5));
+
+module.exports = { twoSum };
