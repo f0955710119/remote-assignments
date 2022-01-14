@@ -1,0 +1,10 @@
+@media screen and (max-width: 96em) {
+  .nav__item--more {
+    display: block;
+  }
+
+  .nav__item--profile,
+  .nav__item--blog {
+    display: none;
+  }
+}
