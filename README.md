@@ -6,7 +6,9 @@
 
 #### Basic
 
-1. add RWD to different devices (now is only avaiable to big screen PC)
+1. add RWD to different devices of week 3 sum.html (now is only avaiable to big screen PC)
+2. revises week 2 assignment-2: create two functions that create JS object {}
+3. refactor assignment-advanced: avoid from reassigning 0 to input array and heavy loop
 
 #### Advanced
 
