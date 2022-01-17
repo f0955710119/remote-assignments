@@ -13,8 +13,10 @@
   @include flex-center;
   width: 50%;
   height: 50vh;
-  max-width: 60rem;
-  max-height: 30rem;
+  max-width: 100rem;
+  max-height: 80rem;
+  min-width: auto;
+  min-height: auto;
 
   background: rgba($color--white, 0.25);
   box-shadow: 0 0.8rem 3.2rem 0 rgba($color--primary--darkest, 0.37);

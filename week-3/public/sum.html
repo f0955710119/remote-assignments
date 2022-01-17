@@ -5,11 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/main.css" />
-    <title>Sum Page</title>
+    <title>Counting Page</title>
   </head>
   <body>
     <div class="container">
-      <h2>Here is the sum of your int</h2>
+      <form class="form" id="sum">
+        <h2 class="form__title">Welcome to Counting Page</h2>
+        <div class="form__field">
+          <label for="number">CLICK to PASS an INT!</label>
+          <input type="text" name="number" id="number" />
+        </div>
+        <button class="form__btn" for="sum" type="submit">Sumbit</button>
+      </form>
     </div>
+
+    <script>
+      const form = document.querySelector('.form');
+      const label = document.querySelector('label');
+      const input = document.querySelector('#number');
+      const buttonSubmit = document.querySelector('.form__btn');
+
+      form.addEventListener('submit', async (event) => {
+        // prevent reload
+        event.preventDefault();
+        // set AJAX to do post request to /getData?number=input
+        async function getData(url, numberValue) {
+          try {
+            // Fetch API to do Post http request
+            const response = await fetch(url, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              data: JSON.stringify(numberValue),
+            });
+            // parse json response
+            const data = await response.json();
+            // error handler
+            if (data.statusCode !== 200) {
+              throw new Error(data.message);
+            }
+            // extract object data
+            const { sum } = data.data;
+            // log results
+            console.log(`Response Success: sum is ${sum}`);
+            // change UI to remind users what's going on
+            label.textContent = `SUM is ${sum} (Click me to TRY Anthoner round)`;
+          } catch (error) {
+            label.textContent =
+              error.message + ' (Click me to TRY Anthoner round)';
+            console.error(error);
+          }
+        }
+        // using getData()
+        const number = input.value;
+        const url = `http://localhost:3000/getData?number=${number}`;
+        await getData(url, number);
+
+        // blur & clean input
+        input.value = '';
+        input.blur();
+      });
+    </script>
   </body>
 </html>

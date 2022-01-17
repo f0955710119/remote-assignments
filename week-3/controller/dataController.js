@@ -1,5 +1,4 @@
-const helper = require('../controller_helpers');
-
+// const helper = require('../controller_helpers');
 exports.getData = (req, res) => {
   // get query
   const queryNumber = req.query.number;
@@ -22,13 +21,13 @@ exports.getData = (req, res) => {
 
     // 200 success status to send back the sum of ints from query
   } else {
-    const { sum, numberArray: intArray } = helper.sum(+queryNumber);
+    const int = +queryNumber;
+    const sum = ((int + 1) * int) / 2;
     res.status(200).json({
       status: 'success',
       statusCode: 200,
       data: {
         sum,
-        intArray,
       },
     });
   }
