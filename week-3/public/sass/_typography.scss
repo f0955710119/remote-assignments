@@ -1,0 +1,19 @@
+@import '_var';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-weight: 400;
+  font-family: 'Roboto', 'Open Sans';
+  text-align: center;
+  color: $color--grey;
+}
+
+h2 {
+  text-transform: uppercase;
+}
