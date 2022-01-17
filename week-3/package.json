@@ -4,13 +4,18 @@
   "description": "remote assignment of week 3",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app.js"
   },
   "author": "Weil Liao",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.1",
+    "dotenv": "^14.0.1",
     "express": "^4.17.2",
     "express-session": "^1.17.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "pug": "^3.0.2"
   }
 }
