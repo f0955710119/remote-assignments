@@ -12,3 +12,9 @@ body {
   @include flex-center;
   background-image: linear-gradient($color--primary, $color--secondary);
 }
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: $color--white;
+}

@@ -16,7 +16,7 @@ app.use(express.static('public'));
 
 // server-assignment-1
 app.route('/').get((req, res) => {
-  res.status(200).send('Hello My Server!');
+  res.status(200).render('index.html');
 });
 
 // routes

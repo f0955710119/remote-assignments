@@ -1,0 +1,32 @@
+@import '_mixins';
+@import '_var';
+
+.welcome {
+  @include flex-column-center;
+
+  &__title {
+    font-size: 4rem;
+    margin-bottom: 3rem;
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      font-size: 2.4rem;
+      color: $color--primary--dark;
+
+      transform: translateY(0);
+      transition: all 0.3s;
+    }
+
+    &:hover {
+      color: $color--primary--darker;
+      transform: translateY(-1rem);
+    }
+
+    &:active {
+      color: $color--primary--darkest;
+      transform: translateY(0.5rem);
+    }
+  }
+}

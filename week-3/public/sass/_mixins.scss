@@ -1,3 +1,5 @@
+@import '_var';
+
 @mixin flex-center {
   display: flex;
   justify-content: center;
@@ -26,6 +28,23 @@
   -webkit-backdrop-filter: blur(4px);
 }
 
-// @mixin media-manager (device) {
+// RWD目前數值885(16*56) > 待寫出sass的控制器
+@mixin media-manager($breakpoint) {
+  @if $breakpoint == smallest {
+    @media screen and (max-width: $device--smallest) {
+      @content;
+    }
+  }
 
-// }
+  @if $breakpoint == small {
+    @media screen and (max-width: $device--small) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == median {
+    @media screen and (max-width: $device--median) {
+      @content;
+    }
+  }
+}
