@@ -1,0 +1,14 @@
+不管資安的簡易測試版
+1. 先寫一個接收user input的入口網頁
+  1-1 申請帳號 / 登入帳號 的自由切換頁面(對到不同endpoint)
+  1-2 完成頁面後去寫route
+    1-2-1 先把route寫好
+    1-2-2 寫controller
+    1-2-3 結合兩者去寫app.js的middleware跟path
+2. 設定form的method是post一組user資訊
+3. 把該資訊存為cookie
+
+目前已經接好myName / trackName >  接著要處理cookie > 先做正向流程 :
+  先讓user給name > 成立cookie > reload時檢查cookie的審查
+
+管資安的測試版

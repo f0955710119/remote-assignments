@@ -39,6 +39,7 @@
   }
   &__btn {
     padding: 1rem 3rem;
+    margin-bottom: 5%;
     text-transform: uppercase;
     color: $color--white;
 
@@ -78,6 +79,22 @@
     &:focus {
       outline: none;
       outline: 0.5rem solid $color--secondary--dark;
+    }
+
+    &--sign-up {
+      color: $color--grey;
+      background: $color--secondary--dark;
+    }
+  }
+
+  #name {
+    border-bottom: 0.5px solid $color--grey;
+  }
+
+  .link a {
+    &:link,
+    &:visited {
+      color: $color--primary--darker;
     }
   }
 }

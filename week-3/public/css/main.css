@@ -36,7 +36,7 @@ h2 {
   justify-content: center;
   align-items: center;
   width: 50%;
-  height: 60vh;
+  height: 70vh;
   max-width: 100rem;
   max-height: 80rem;
   min-width: auto;
@@ -85,6 +85,7 @@ h2 {
         border-bottom: 0.5px solid #333; }
   .form__btn {
     padding: 1rem 3rem;
+    margin-bottom: 5%;
     text-transform: uppercase;
     color: #fff;
     border: none;
@@ -109,6 +110,13 @@ h2 {
     .form__btn:focus {
       outline: none;
       outline: 0.5rem solid #a6cc7a; }
+    .form__btn--sign-up {
+      color: #333;
+      background: #a6cc7a; }
+  .form #name {
+    border-bottom: 0.5px solid #333; }
+  .form .link a:link, .form .link a:visited {
+    color: #168b82; }
 
 @media screen and (max-width: 40em) {
   .form__btn {
@@ -150,13 +158,46 @@ h2 {
     font-size: 4rem;
     margin-bottom: 3rem; }
   .welcome__link:link, .welcome__link:visited {
-    font-size: 2.4rem;
-    color: #1eb9ad;
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-size: 2.2rem;
+    color: #fff;
+    border: 3px solid transparent;
+    border-radius: 5px;
+    background-color: #1eb9ad;
+    box-shadow: 0 0.8rem 2.4rem 0 rgba(0, 0, 0, 0.3);
     transform: translateY(0);
     transition: all 0.3s; }
+    .welcome__link:link:not(:last-child), .welcome__link:visited:not(:last-child) {
+      margin-bottom: 5%; }
   .welcome__link:hover {
+    border: 3px solid #1eb9ad;
+    background-color: #1eb9ad;
+    box-shadow: 0 1.6rem 3rem 0 rgba(0, 0, 0, 0.2);
     color: #168b82;
     transform: translateY(-1rem); }
   .welcome__link:active {
-    color: #072e2b;
+    border: 3px solid #072e2b;
+    background-color: #072e2b;
+    box-shadow: 0 0.6rem 1.2rem 0 rgba(0, 0, 0, 0.5);
+    color: #d3faf7;
     transform: translateY(0.5rem); }
+
+.loading {
+  display: block; }
+
+.hidden {
+  display: none; }
+
+.logout:link, .logout:visited {
+  color: #168b82; }
+
+@media screen and (max-width: 40em) {
+  .welcome__title {
+    font-size: 3.2rem; }
+  .welcome__link:link, .welcome__link:visited {
+    font-size: 2rem; } }
+
+@media screen and (max-width: 27em) {
+  .welcome__link:link, .welcome__link:visited {
+    font-size: 1.6rem; } }
