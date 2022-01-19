@@ -12,7 +12,7 @@
 
 #### Advanced
 
-1. cookie usage & works behind scene
+1. cookie usage & works behind scene > DONE
 2. good to practice connection to MongoDB or Firestore
 
 ### - TODO List
@@ -44,8 +44,7 @@
 
 5. cookie 的安全性
 
-5-1. 什麼是 httpOnly,httpHeader? >> 抵禦攻擊者利用 Cross-Site Scripting (XSS) 手法來盜取用戶身份
-5-2.
+5-1. 什麼是 httpOnly,httpHeader? >> 抵禦攻擊者利用 Cross-Site Scripting (XSS) 手法來盜取用戶身份，同時也會讓前端無法取得 document.cookie 的值
 
 #### MongoDB 的搭配
 
