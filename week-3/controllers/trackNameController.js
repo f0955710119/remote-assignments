@@ -10,9 +10,9 @@ exports.signIn = (req, res) => {
       // maxAge: 3600 * 1000,
       // secure: true,
     })
-    .redirect(301, '/myName.html');
+    .redirect(301, '/myName');
 };
 
 exports.visitPage = (req, res) => {
-  return res.redirect(301, '/trackName.html');
+  return res.render('trackName', { title: 'Track Name Page' });
 };

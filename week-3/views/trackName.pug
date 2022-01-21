@@ -1,0 +1,55 @@
+extends layout.pug
+block content
+  div(class="loading")
+    h1 Loading...
+  form(class="form hidden" id="nameForm" method="post")
+    h2(class="form__title") Track Name Page
+    div(class="form__field")
+      input(type="text" name="name" id="name")     
+    div(class="container__btn")
+      button(class="form__btn" for="nameForm" type="submit") submit 
+    div(class="link")
+      a(href="/") Back to Home Page
+  
+  script.
+    const loading = document.querySelector('.loading');
+    const form = document.querySelector('.form');
+    const name = document.querySelector('#name');
+    const formTitle = document.querySelector('.form__title');
+
+    window.addEventListener('load', () => {
+      const name = document.cookie.replace('NAME=', '');
+      if (!name) {
+        setTimeout(()=>{
+          form.classList.remove('hidden');
+          loading.classList.add('hidden');
+        },500)
+      } 
+    });
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const nameValue = name.value;
+
+      if (nameValue.trim() === '') {
+        return (formTitle.textContent = 'Please Fill the Fields');
+      }
+
+      async function sendName(url, name) {
+        const response = await fetch(url, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          data: JSON.stringify({ name }),
+        });
+      }
+
+      await sendName(
+        `http://localhost:3000/trackName?name=${nameValue}`,
+        nameValue
+      );
+
+      // 原來問題是在前端的url，我在network明明有看到發送請求跟redirect成功的訊息XD
+      window.location.href = '/myName';
+    });  
