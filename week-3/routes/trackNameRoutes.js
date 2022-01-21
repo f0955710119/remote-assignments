@@ -1,5 +1,5 @@
 const express = require('express');
-const trackNameController = require('../controller/trackNameController');
+const trackNameController = require('../controllers/trackNameController');
 
 const router = express.Router();
 

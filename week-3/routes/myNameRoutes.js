@@ -1,5 +1,5 @@
 const express = require('express');
-const myNameController = require('../controller/myNameController');
+const myNameController = require('../controllers/myNameController');
 
 const router = express.Router();
 

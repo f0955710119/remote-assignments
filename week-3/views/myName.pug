@@ -1,0 +1,25 @@
+extends layout.pug
+block content
+  div(class="welcome hidden")
+    h1(class="welcome__title") Hello my Server!
+    a(class="welcome__link" href="/sum") Counting page
+    a(class="welcome__link" href="/") Home page
+    a(class="logout" href="/trackName") Log out
+  
+  script.
+    const welcome = document.querySelector('.welcome');
+    const title = document.querySelector('.welcome__title');
+    const loading = document.querySelector('.loading');
+    const logout = document.querySelector('.logout');
+
+    window.addEventListener('load', () => {
+      const name = document.cookie.replace('NAME=', '');
+      if (!name) return;
+      welcome.classList.remove('hidden')
+      title.textContent = `Welcome ${name}!`;
+    });
+
+    logout.addEventListener('click', () => {
+      document.cookie =
+        'NAME=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    });

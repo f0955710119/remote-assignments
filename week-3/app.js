@@ -5,6 +5,7 @@ const dotenv = require('dotenv');
 
 const dataRouter = require('./routes/dataRoutes');
 const homeRouter = require('./routes/homeRoutes');
+const sumRouter = require('./routes/sumRoutes');
 const myNameRouter = require('./routes/myNameRoutes');
 const trackNameRouter = require('./routes/trackNameRoutes');
 
@@ -16,13 +17,16 @@ const app = express();
 // middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
-// app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static('public'));
 app.use(cookieParser());
+
+// engine
+app.set('view engine', 'pug');
+
 // routes
-// server-assignment-1
-app.use('/', homeRouter);
+app.use('/', homeRouter); // server-assignment-1
 app.use('/getData', dataRouter);
+app.use('/sum', sumRouter);
 app.use('/myName', myNameRouter);
 app.use('/trackName', trackNameRouter);
 
