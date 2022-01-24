@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const NavItem = styled.li`
   &:not(:last-child) {
@@ -16,10 +16,10 @@ const NavItem = styled.li`
 `;
 
 const HeaderNavItem = (props) => {
-  const { key, title } = props;
+  const { id, title } = props;
 
   return (
-    <NavItem key={key}>
+    <NavItem key={id}>
       <a href="#">{title}</a>
     </NavItem>
   );

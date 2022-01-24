@@ -1,7 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useState } from "react";
+import styled from "styled-components";
 
-import HeaderNav from './HeaderNav/HeaderNav';
+import HeaderNav from "./HeaderNav/HeaderNav";
+import HeadingPrimary from "../UI/Heading/HeadingPrimary";
 
 const HeaderBar = styled.header`
   display: flex;
@@ -22,11 +23,19 @@ const Hero = styled.div`
 `;
 
 const Header = () => {
+  const [welcomeMessage, setWelcomeMessage] = useState("Welcome Message");
+
+  function clickWelcomeMessage() {
+    setWelcomeMessage("Have a Good Time!");
+  }
+
   return (
     <HeaderBar>
       <HeaderNav />
       <Hero>
-        <h1>Welcome Message</h1>
+        <HeadingPrimary headingPrimary={{ onClick: clickWelcomeMessage }}>
+          {welcomeMessage}
+        </HeadingPrimary>
       </Hero>
     </HeaderBar>
   );

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React, { useState } from "react";
+import styled from "styled-components";
 
-import HeaderNavList from './HeaderNavList';
+import HeaderNavList from "./HeaderNavList";
 
 const Nav = styled.nav`
   display: flex;
@@ -20,14 +20,14 @@ const Nav = styled.nav`
   }
 
   @media screen and (max-width: 50em) {
-    & ion-icon[name='menu'] {
-      display: ${(props) => (props.menuClicked ? 'none' : 'block')};
+    & ion-icon[name="menu"] {
+      display: ${(props) => (props.menuClicked ? "none" : "block")};
 
       cursor: pointer;
     }
 
-    & ion-icon[name='close'] {
-      display: ${(props) => (props.menuClicked ? 'block' : 'none')};
+    & ion-icon[name="close"] {
+      display: ${(props) => (props.menuClicked ? "block" : "none")};
 
       position: fixed;
       top: 1.5rem;
@@ -49,7 +49,6 @@ const Logo = styled.div`
 
 const HeaderNav = () => {
   const [menuClicked, setMenuClicked] = useState(false);
-  console.log(menuClicked);
   function clickMeunHandler() {
     setMenuClicked((previousState) => !previousState);
   }
