@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Layout from './components/Layouts/Layout';
+
 const App = () => {
   function getData() {
     async function getProducts(url) {
@@ -17,7 +19,11 @@ const App = () => {
     console.dir(data);
   }
 
-  return <h1 onClick={getData}>This is my React app!</h1>;
+  return (
+    <Layout>
+      <h1 onClick={getData}>This is my React app!</h1>;
+    </Layout>
+  );
 };
 
 export default App;
