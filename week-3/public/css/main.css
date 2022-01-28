@@ -63,6 +63,10 @@ h2 {
     font-size: 3.6rem;
     font-family: 'Open Sans';
     color: #168b82;
+    margin-bottom: 2.5%; }
+  .form__title--sub {
+    font-size: 1.2rem;
+    color: #333;
     margin-bottom: 5%; }
   .form__field {
     display: flex;

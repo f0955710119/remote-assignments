@@ -13,7 +13,7 @@ block content
     const logout = document.querySelector('.logout');
 
     window.addEventListener('load', () => {
-      const name = document.cookie.replace('NAME=', '');
+      const name = getCookieByName('NAME');
       if (!name) return;
       welcome.classList.remove('hidden')
       title.textContent = `Welcome ${name}!`;
@@ -23,3 +23,17 @@ block content
       document.cookie =
         'NAME=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
     });
+
+    function getCookieByName (name) {
+      // get all cookies
+      const value = `; ${document.cookie}`;
+      // split forwards
+      let pair = value.split(`; ${name}=`);
+      // split backwards
+      if (pair[1].search(';')){
+        pair = pair[1].split('; ')
+        // BUG: cookie的編碼是ASCII,所以要解碼 > DONE
+        return decodeURI(pair[0])
+        // else for only a cookie
+      } else return decodeURI(pair[1])
+    }

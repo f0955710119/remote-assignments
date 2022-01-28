@@ -9,10 +9,18 @@
   @include flex-column-center;
 
   &__title {
-    font-size: 3.6rem;
-    font-family: 'Open Sans';
-    color: $color--primary--darker;
-    margin-bottom: 5%;
+    & {
+      font-size: 3.6rem;
+      font-family: 'Open Sans';
+      color: $color--primary--darker;
+      margin-bottom: 2.5%;
+    }
+
+    &--sub {
+      font-size: 1.2rem;
+      color: $color--grey;
+      margin-bottom: 5%;
+    }
   }
   &__field {
     @include flex-column-center;

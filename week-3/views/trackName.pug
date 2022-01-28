@@ -4,8 +4,9 @@ block content
     h1 Loading...
   form(class="form hidden" id="nameForm" method="post")
     h2(class="form__title") Track Name Page
+    span(class='form__title--sub') (Length of the name can not be longer than 10)
     div(class="form__field")
-      input(type="text" name="name" id="name")     
+      input(type="text" name="name" id="name" minlength=1 maxlength=10)     
     div(class="container__btn")
       button(class="form__btn" for="nameForm" type="submit") submit 
     div(class="link")
@@ -18,8 +19,9 @@ block content
     const formTitle = document.querySelector('.form__title');
 
     window.addEventListener('load', () => {
-      const name = document.cookie.replace('NAME=', '');
-      if (!name) {
+      const nameCookie = getCookieByName('NAME')
+      console.log(nameCookie)
+      if (!nameCookie) {
         setTimeout(()=>{
           form.classList.remove('hidden');
           loading.classList.add('hidden');
@@ -30,11 +32,17 @@ block content
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
       const nameValue = name.value;
-
+      // BUG: 用正規表達限制輸入(限制標點符號、注音、) > DONE
+      const nameReg = /^[a-zA-Z0-9\u4e00-\u9fa5]{1,10}$/
+      const passReg = nameReg.test(nameValue)
+      console.log(passReg)
       if (nameValue.trim() === '') {
         return (formTitle.textContent = 'Please Fill the Fields');
       }
-
+      if (!passReg){
+        return (formTitle.textContent = 'Only English, Chinese, and Number are avaiable');
+      }
+      console.log('yes')
       async function sendName(url, name) {
         const response = await fetch(url, {
           method: 'POST',
@@ -52,4 +60,19 @@ block content
 
       // 原來問題是在前端的url，我在network明明有看到發送請求跟redirect成功的訊息XD
       window.location.href = '/myName';
-    });  
+    });
+
+    function getCookieByName (name) {
+      // get all cookies
+      const value = `; ${document.cookie}`;
+      // split forwards
+      let pair = value.split(`; ${name}=`);
+      // split backwards
+      if (!pair[1]) return
+      if (pair[1].search(';')){
+        pair = pair[1].split('; ')
+        console.log(pair)
+        return pair[0]
+        // else for only a cookie
+      } else return pair[1]
+    }
